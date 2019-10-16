@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Speed : MonoBehaviour
+public class Jet : MonoBehaviour
 {
+
+    public float forwardSpeed = 1.0f;
+    public Vector3 userDirection = Vector3.right;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,10 @@ public class Speed : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Translate(userDirection * forwardSpeed * Time.deltaTime);
     }
 }
