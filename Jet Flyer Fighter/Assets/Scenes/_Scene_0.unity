@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -202,6 +202,65 @@ Transform:
   m_LocalScale: {x: 1000, y: 1, z: 5000}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &264804390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 264804392}
+  - component: {fileID: 264804391}
+  m_Layer: 0
+  m_Name: JetSpin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &264804391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264804390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bafdfcef70ef01d4b840fb75854eb4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userDirection: {x: 0, y: 0, z: 1}
+  jetPrefab: {fileID: 1764896080472084, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
+  spinSpeed: 0
+  boostTime: 2
+  currentBoostTime: 0
+  boostDelayTime: 1
+  currentBoostDelayTime: 0
+  boosting: 0
+  time: 0
+  baseSpeed: 10
+  speedBoost: 500
+  speed: 0
+  speedTurn: 0
+  rollMult: 0
+  canMove: 0
+--- !u!4 &264804392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264804390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1570152421}
+  m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1009763503
@@ -360,7 +419,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 264804392}
     m_Modifications:
     - target: {fileID: 1764896080472084, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_Name
@@ -372,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalPosition.z
@@ -380,15 +439,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalRotation.w
@@ -396,7 +455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -436,9 +495,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafdfcef70ef01d4b840fb75854eb4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
   userDirection: {x: 0, y: 0, z: 1}
+  jetPrefab: {fileID: 264804390}
+  spinSpeed: 0
+  boostTime: 2
+  currentBoostTime: 0
+  boostDelayTime: 1
+  currentBoostDelayTime: 0
+  boosting: 0
+  time: 0
+  baseSpeed: 10
+  speedBoost: 10
   speed: 30
+  speedTurn: 30
   rollMult: -45
-  smooth: 1
-  rotationSpeed: 500
+  canMove: 0
