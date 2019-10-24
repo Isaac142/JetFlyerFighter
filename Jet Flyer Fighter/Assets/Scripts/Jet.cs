@@ -111,7 +111,7 @@ public class Jet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //transform.Translate(userDirection * speed * Time.deltaTime);
+        transform.Translate(userDirection * speed * Time.deltaTime);
 
         BoostJet();
     }
