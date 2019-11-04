@@ -11,10 +11,13 @@ GameObject:
   - component: {fileID: 4164131239711798}
   - component: {fileID: 33215022479487022}
   - component: {fileID: 23645608067082754}
-  - component: {fileID: 2078526487}
+  - component: {fileID: 127763554}
+  - component: {fileID: 127763558}
+  - component: {fileID: 1359491719106455027}
+  - component: {fileID: 7978915566417173938}
   m_Layer: 0
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -27,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790163588897870}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 12500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +81,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2078526487
+--- !u!114 &127763554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790163588897870}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f377b4c05e085428e1678af1b53aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: {fileID: 1790163588897870}
+  spawnValues: {x: 10, y: 0, z: 20}
+  spawnWait: 0
+  spawnMostWait: 2
+  spawnLeastWait: 0.5
+  startWait: 1
+  stop: 0
+--- !u!114 &127763558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,12 +109,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790163588897870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b4441a58fa15f4eb85a07f6db70a68, type: 3}
+  m_Script: {fileID: 11500000, guid: 61c09aa91a5d4fc4b9a97189d8f88731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabEnemies:
+  Player: {fileID: 4600188504910814, guid: b8e16db3728f6a34495a2cd5b040c514, type: 3}
+  speed: 100
+--- !u!114 &1359491719106455027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790163588897870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d36bc754fc15394f9c26a5e865898f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnTime: 0
+  maxSpawnTime: 0
+  spawnDelay: 0
+  enemies:
   - {fileID: 1790163588897870}
-  enemySpawnPerSecond: 0.5
-  enemySpawnPadding: 1.5
-  idk: 0
-  enemySpawnRate: 0
+  centre: {x: 0, y: 0, z: 0}
+  size: {x: 100, y: 0, z: 25000}
+--- !u!136 &7978915566417173938
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790163588897870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 16
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
