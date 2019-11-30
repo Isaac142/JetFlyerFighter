@@ -7,10 +7,12 @@ public class Respawn : MonoBehaviour
 {
     public GameObject player;
 
+    public GameObject youLost;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -28,8 +30,14 @@ public class Respawn : MonoBehaviour
         {
             Debug.Log("hit");
             //Destroy(player);
+            youLost.SetActive(true);
+            Time.timeScale = 0f;
             player.GetComponent<Renderer>().material.color = Color.green;
-            SceneManager.LoadScene("_Scene_0");
+            //SceneManager.LoadScene("_Scene_0");
+        }
+        else
+        {
+            Time.timeScale = 1f;
         }
     }
 }

@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
-    [Header("In Game UI")]
-    public GameObject winUI;
-    public GameObject winButton;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +16,15 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

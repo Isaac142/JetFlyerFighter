@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Win : MonoBehaviour
 {
 
-    public Test TT;
+    public GameObject youWin;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +25,11 @@ public class Win : MonoBehaviour
     {
         Debug.Log(other.name);
 
-        if (other.gameObject.CompareTag("Win"))
+        if (other.gameObject.tag == "Win")
         {
             Debug.Log("You Win");
-            TT.isWon = true;
-            TT.isWonButton = true;
+            youWin.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }
